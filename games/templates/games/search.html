@@ -1,0 +1,494 @@
+{% extends 'user/base.html' %}
+{% block title %} Games {% endblock title %}
+{% block js %}
+
+{% load static %}
+
+<script src="{% static 'games/search.js' %}"></script>
+
+{% endblock js %}
+
+{% block navbar %}
+{% include 'user/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+<div class="container-fluid bg-light col-xl-10 col-lg-10">
+    <div class="row">
+        <h3 class="m-2 p-2 bg-dark col-xl-12 text-white border-left border-warning">Search</h3>
+    </div>
+
+    <div class="row form-group align-items-center justify-content-center m-2">
+        <input class="form-control col-xl-4 mr-3" type="search" placeholder="Search" id="query" aria-label="Search">
+        <input class="form-control col-xl-4 mr-3" type="textfield" placeholder="Number of Results" id="result" aria-label="Search" disabled>
+        <button class="btn-sm btn-outline-primary  col-xl-2" id="search" name="search" type="submit">Search</button>
+    </div>
+
+    <div class="row p-3">
+        {% comment %} game 0 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-0">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-0" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-0"></h6>
+                    <h6 id="items-0"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-0" href=""><h5 id="title-0"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-0" ></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 1 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center " id="game-1">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-1" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-1"></h6>
+                    <h6 id="items-1"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-1" href=""><h5 id="title-1"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-1" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 2 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center " id="game-2">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-2" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-2"></h6>
+                    <h6 id="items-2"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-2" href=""><h5 id="title-2"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-2" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 3 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center " id="game-3">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-3" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-3"></h6>
+                    <h6 id="items-3"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-3" href=""><h5 id="title-3"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-3" class="col-6"></p>
+                </div>
+            </div>
+            
+        </div>
+
+        {% comment %} game 4 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center " id="game-4">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-4" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-4"></h6>
+                    <h6 id="items-4"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-4" href=""><h5 id="title-4"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-4" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 5 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center " id="game-5">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-5" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-5"></h6>
+                    <h6 id="items-5"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-5" href=""><h5 id="title-5"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-5" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 6 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center " id="game-6">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-6" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-6"></h6>
+                    <h6 id="items-6"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-6" href=""><h5 id="title-6"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-6" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 7 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-7">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-7" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-7"></h6>
+                    <h6 id="items-7"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-7" href=""><h5 id="title-7"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-7" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 8 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-8">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-8" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-8"></h6>
+                    <h6 id="items-8"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-8" href=""><h5 id="title-8"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-8" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 9 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-9">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-9" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-9"></h6>
+                    <h6 id="items-9"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-9" href=""><h5 id="title-9"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-9" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 10 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-10">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-10" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-10"></h6>
+                    <h6 id="items-10"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-10" href=""><h5 id="title-10"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-10" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 11 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-11">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-11" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-11"></h6>
+                    <h6 id="items-11"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-11" href=""><h5 id="title-11"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-11" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 12 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-12">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-12" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-12"></h6>
+                    <h6 id="items-12"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-12" href=""><h5 id="title-12"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-12" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 13 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-13">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-13" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-13"></h6>
+                    <h6 id="items-13"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-13" href=""><h5 id="title-13"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-13" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 14 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-14">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-14" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-14"></h6>
+                    <h6 id="items-14"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-14" href=""><h5 id="title-14"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-14" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 15 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-15">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-15" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-15"></h6>
+                    <h6 id="items-15"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-15" href=""><h5 id="title-15"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-15" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 16 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-16">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-16" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-16"></h6>
+                    <h6 id="items-16"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-16" href=""><h5 id="title-16"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-16" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 17 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-17">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-17" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-17"></h6>
+                    <h6 id="items-17"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-17" href=""><h5 id="title-17"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-17" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 18 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-18">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-18" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-18"></h6>
+                    <h6 id="items-18"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-18" href=""><h5 id="title-18"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-18" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        {% comment %} game 19 {% endcomment %}
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3 grow d-flex flex-column align-items-center" id="game-19">
+        {% csrf_token %}
+            
+            <div class="">
+                <div class="row mb-2">
+                <img id="img-19" height="200" width="350" src="" alt="">
+                </div>
+                <div class="row">
+                    <h6 id="rate-19"></h6>
+                    <h6 id="items-19"></h6>
+                </div>
+                <div class="row">
+                    <a id="details-19" href=""><h5 id="title-19"></h5></a>
+                </div>
+                <div class="row">
+                    <p id="year-19" class="col-6"></p>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+
+    <ul id="pagination-demo" class="pagination-lg justify-content-center pb-4"></ul>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'user/base.html' %}
+{% block title %} Login {% endblock title %}
+
+{% block content %}
+
+<body class="bg-dark">
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-8 col-sm-12 p-5 m-5 border border-light bg-light rounded">
+                    <div class="d-flex flex-column align-items-center">
+                        <h3 class="text-center mb-2 col-sm-4">Welcome!</h3>
+                        <span class="col-sm-4 mb-4 border-bottom"></span>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <a class="btn btn-outline-primary col-sm-12" href="{% url 'user:register' %}">Register</a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-primary col-sm-12" href="{% url 'user:login' %}">Login</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+{% endblock content %}

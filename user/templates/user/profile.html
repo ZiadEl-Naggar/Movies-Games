@@ -1,0 +1,45 @@
+{% extends 'user/base.html' %}
+{% block title %} Profile {% endblock title %}
+
+{% block navbar %}
+{% include 'user/navbar.html' %}
+{% endblock navbar %}
+
+
+{% block content %}
+
+<div class="container bg-white text-dark rounded mt-4 p-5">
+    <div class="row p-3 justify-content-center">
+    {% if data %}
+    {% for d in data %}
+
+        <div class="col-lg-4 col-md-4">
+            <img class="rounded-circle col-md-12"  src="{{d.picture.url}}" alt="">
+            <div class="row justify-content-center">
+                <a class="btn btn-outline-primary col-md-8 mt-4" href="{% url 'user:editprofile' d.pk %}">Edit Profile</a>
+            </div>
+        </div>
+
+        <div class="col-md-6 ml-4 pt-5">
+            <h4 class="p-2"><i class="fas fa-user"></i> {{d.firstname}} {{d.lastname}}</h4>
+            <h4 class="p-2"><i class="fas fa-user"></i> {{d.user}}</h4>
+            <h4 class="p-2"><i class="fas fa-at"></i> {{request.user.email}}</h4>
+            <h4 class="p-2"><i class="fas fa-birthday-cake"></i> {{d.birthdate}}</h4>
+            <h4 class="p-2"><i class="fas fa-info-circle"></i> {{d.details}}</h4>
+        </div>
+
+        {% endfor %}
+        {% else %}
+            <h3><a href="{% url 'user:addprofile' %}">Add Profile Info.</a></h3>
+            
+        {% endif %}
+    </div>
+
+</div>
+
+<script>
+$(".navbar li").removeClass('active');
+$(".navbar .profile").addClass('active');
+</script>
+
+{% endblock content %}

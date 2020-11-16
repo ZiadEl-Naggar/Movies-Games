@@ -1,0 +1,99 @@
+{% extends 'user/base.html' %}
+{% block title %} Edit Profile {% endblock title %}
+
+{% block navbar %}
+{% include 'user/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+{% comment %} <form action="" method="post" class="form-horizontal" >
+    {% csrf_token %}
+    {% include 'user/form_template.html' %}
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form> {% endcomment %}
+
+
+<body class="bg-dark">
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-8 col-sm-12">
+                <form action="" method="post" class="p-4 m-2 border border-light bg-light rounded" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="d-flex flex-column align-items-center">
+                            <h3 class="text-center mb-2 col-sm-6">Profile Info.</h3>
+                        </div>
+                        {% comment %} {% include 'user/form_template.html' %} {% endcomment %}
+
+                        <div class="form-group row">
+                            <div class="col-md-6 ">
+                                <label class="col-sm-4 col-form-label-md row" for="">{{ form.firstname.label }}:</label>
+                                {{form.firstname}}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-sm-4 col-form-label-md row" for="">{{ form.lastname.label }}:</label>
+                                {{form.lastname}}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label-md" for="">{{ form.birthdate.label }}:</label>
+                            <div class="col-sm-12 input-group date" data-target-input="nearest" id="datetimepicker">
+                                {{form.birthdate}}
+                                <div class="input-group-append" data-target="#datetimepicker" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <span class="text-danger small">{{ field.errors }}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label-md" for="">{{ form.picture.label }}:</label>
+                            <div class="col-sm-12">
+                                <small>{{form.picture}}</small>
+                            </div>
+
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <span class="text-danger small">{{ field.errors }}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label-md" for="">{{ form.details.label }}:</label>
+                            <div class="col-sm-12">
+                                {{form.details}}
+                            </div>
+
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <span class="text-danger small">{{ field.errors }}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-offset-2 col-sm-12">
+                                <button type="submit" class="btn btn-outline-primary col-sm-12">Confirm Changes</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker').datetimepicker({format: 'YYYY-MM-DD'});
+    });
+</script>
+</body>
+{% endblock content %}

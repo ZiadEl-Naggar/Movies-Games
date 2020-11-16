@@ -1,0 +1,77 @@
+{% extends 'user/base.html' %}
+{% block title %} Games {% endblock title %}
+{% block js %}
+
+{% load static %}
+
+<script src="{% static 'games/details.js' %}"></script>
+
+{% endblock js %}
+
+{% block navbar %}
+{% include 'user/navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+
+{% if err %}
+    <p>{{err}}</p>
+{% endif %}
+{% if id %}
+
+<div class="container bg-light p-4">
+
+    {% comment %} <div class="row">
+        <h3 id="title" class="m-2 p-2 bg-dark col-xl-12 text-white border-left border-warning">Games</h3>
+    </div> {% endcomment %}
+    
+    <div class="row">
+        <div class="col-6">
+            <img id="image" class="img-fluid" src="" alt="">
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div>
+                    <h3 id="title"></h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="pl-2">
+                    <h6 id="date"></h6>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="pl-2">
+                    <small><p class="mb-2" id="genres"></p></small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="pl-2">
+                    <small><p class="mb-2" id="platforms"></p></small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="">
+                    <h5 id="rate"></h5>
+                </div>
+                <div class="col-2">
+                    <h5 id="fav"></h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 p-0">
+                    <p id="story"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock content %}

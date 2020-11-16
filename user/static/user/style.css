@@ -1,0 +1,76 @@
+.navbar li:hover,
+.navbar li:focus {
+    text-decoration: none;
+    background-color: dimgrey;
+    border-radius: 5px;
+}
+
+.navbar li a{
+    color: white !important;
+}
+
+.navbar li a:hover{
+    color: black !important;
+}
+
+.navbar .active a:hover{
+    color: white !important;
+    background-color: black;
+}
+
+.navbar .active,.navbar .active a{
+    text-decoration: none;
+    background-color: gray;
+    border-radius: 5px;
+}
+
+.navbar .active a{
+    color: black !important;
+    font-weight: bold;
+}
+
+a{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { 
+    transform: scale(1.05);
+    /* padding-left: 40px; */
+}
+
+.border-left{
+    border-left-width: 5px !important;
+}
+
+.navbar .active .dropdown-menu,.navbar .active a .dropdown-item{
+    background-color: grey !important;
+}
+
+.userlist{
+    overflow: hidden;
+}
+
+.userlistitem{
+    overflow-x: hidden;
+    position: relative;
+}
+
+.menuitem{
+    overflow-x: hidden;
+}
+
+.paddle {
+	position: absolute;
+    width: 2em;
+}
+.left-paddle {
+    left: 0;
+}
+.right-paddle {
+    right: 0;
+}
+.hidden {
+	display: none;
+}
